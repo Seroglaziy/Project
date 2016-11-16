@@ -1,4 +1,4 @@
-package modul2.modul3.objectexample.Homework;
+package modul2.modul3.objectexample.Homework.Homework3;
 
 /**
  * Created by Семья on 14.11.2016.
