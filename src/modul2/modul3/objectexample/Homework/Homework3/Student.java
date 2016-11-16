@@ -1,4 +1,4 @@
-package modul2.modul3.objectexample.Homework;
+package modul2.modul3.objectexample.Homework.Homework3;
 
 /**
  * Created by Семья on 14.11.2016.
@@ -18,18 +18,11 @@ public class Student {
 
 
 
-    public Student(String firstName, String lastName, int group, Course[] coursesTaken, int age, String collegeName, int rating, long id) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.group = group;
-        this.coursesTaken = coursesTaken;
-        this.age = age;
-
-    }
 
 
 
-    public Student(String firstName, String lastName, int group) {
+
+    public Student(String firstName, String lastName,  int group) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.group = group;
