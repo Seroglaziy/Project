@@ -1,4 +1,4 @@
-package modul2.modul3.objectexample.Homework;
+package modul2.modul3.objectexample.Homework.Homework3;
 
 import java.util.Date;
 
@@ -28,7 +28,9 @@ public class Solution {
 
         SpecialStudent st6 = new SpecialStudent("FirstName", "LastName", 4);
         SpecialStudent st7 = new SpecialStudent("LastName", courses1);
-        SpecialStudent st8 = new SpecialStudent("FirstName", "LastName", 10, "CollegeName", 2, 55378, 1234567);
+
+
+
 
 
 
