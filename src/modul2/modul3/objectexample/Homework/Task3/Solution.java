@@ -1,4 +1,4 @@
-package modul2.modul3.objectexample.Homework.Homework3;
+package modul2.modul3.objectexample.Homework.Task3;
 
 import java.util.Date;
 
