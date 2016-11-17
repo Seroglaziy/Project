@@ -1,9 +1,11 @@
-package modul2.modul3.objectexample.Homework.Homework3;
+package modul2.modul3.objectexample.Homework.Task3;
 
 /**
  * Created by Семья on 14.11.2016.
  */
 public class SpecialStudent extends CollegeStudent {
+
+
 
 
     private long secretKey;
@@ -18,10 +20,10 @@ public class SpecialStudent extends CollegeStudent {
         super(lastName, coursesTaken);
     }
 
-    public SpecialStudent(String firstName, String lastName, int group, String collegeName, int rating, long id, long secretKey, String email) {
-        super(firstName, lastName, group, collegeName, rating, id);
+    public SpecialStudent(String firstName, String lastName, int group, long secretKey, String collegeName, int rating ,long id) {
+        super(firstName, lastName, group, collegeName, rating , id);
         this.secretKey = secretKey;
-        this.email = email;
+
     }
 
 
