@@ -17,12 +17,7 @@ public class Arithmetic {
 
 
 
-    //public int add(int[] ints){
-        //int sum = 10;
-        //for (int var : ints) {
-           // sum += var;
-        //}
-        //return sum;
+
     }
 }
 
