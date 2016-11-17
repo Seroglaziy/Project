@@ -30,7 +30,7 @@ package modul2.modul3.objectexample.Homework.Task4;
 
 
         }
-        balance = balance - sum + (sum * commision);
+        balance = balance - (sum + (sum * commision));
 
 
     }
