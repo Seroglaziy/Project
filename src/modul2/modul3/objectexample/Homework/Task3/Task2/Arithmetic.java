@@ -5,7 +5,6 @@ package modul2.modul3.objectexample.Homework.Task3.Task2;
  */
 public class Arithmetic {
     public static void main(String[] args) {
-        Arithmetic arr = new Arithmetic();
         Adder add = new Adder();
         System.out.println(add.add(10, 15));
         System.out.println(add.check(113, 15));
