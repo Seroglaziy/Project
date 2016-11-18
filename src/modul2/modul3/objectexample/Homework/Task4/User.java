@@ -4,28 +4,32 @@ package modul2.modul3.objectexample.Homework.Task4;
  * Created by Семья on 16.11.2016.
  */
         public class User {
+
+
     public static void main(String[] args) {
 
 
     }
 
     private String name;
-    private double balance;
+    private int balance = 1000;
     private int monthsOfEmployment;
     private String companyName;
-    private int salary;
+    private int salary = 500;
     private String currency;
 
     public void paySalary(int salary, int balance) {
         int paySalary = balance + salary;
         System.out.println(paySalary);
 
+
+
     }
     public void withdraw(int sum) {
         int commision = 0;
         if (sum < 1000)
             commision = 5;
-        else {
+       else {
             commision = 10;
 
 
