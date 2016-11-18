@@ -13,7 +13,7 @@ public class Solution {
         Course c3 = new Course(7, "Teacher3");
         Course c4 = new Course(8, "Teacher4");
 
-        Date date = new Date(9999999);
+        Date date = new Date();
         Course c5 = new Course(date, "Name");
 
         Course[] courses1 = {c1,c2,c3};
