@@ -21,12 +21,12 @@ package modul2.modul3.objectexample.Homework.Task4;
         System.out.println(paySalary);
 
     }
-    public void withdraw(double sum) {
-        double commision = 0;
+    public void withdraw(int sum) {
+        int commision = 0;
         if (sum < 1000)
-            commision = 0.05;
+            commision = 5;
         else {
-            commision = 0.01;
+            commision = 10;
 
 
         }
