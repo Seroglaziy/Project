@@ -1,9 +1,7 @@
-package Task4_2;
+package modul4.Task4_2;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
-import static Task4_2.Currency.EUR;
-import static Task4_2.Currency.USD;
+import static modul4.Task4_2.Currency.EUR;
+import static modul4.Task4_2.Currency.USD;
 
 /**
  * Created by Семья on 19.11.2016.
