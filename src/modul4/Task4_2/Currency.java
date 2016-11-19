@@ -1,4 +1,4 @@
-package Task4_2;
+package modul4.Task4_2;
 
 /**
  * Created by Семья on 19.11.2016.
