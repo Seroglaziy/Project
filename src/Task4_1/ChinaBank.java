@@ -1,4 +1,6 @@
-package modul4;
+package Task4_1;
+
+import Task4_1.Bank;
 
 import java.util.Currency;
 
