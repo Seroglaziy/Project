@@ -18,37 +18,35 @@ package modul2.modul3.objectexample.Homework.Task4;
     private String currency;
 
 
-
-
-
     public void paySalary() {
-         balance = balance + salary;
-         System.out.println(balance);
-
-
-
+        balance = balance + salary;
+        System.out.println(balance);
 
 
     }
-    public void withdraw(int sum) {
+
+
+    public int withdraw(int sum) {
         int commision = 0;
         if (sum < 1000)
             commision = 5;
-       else {
+        else {
             commision = 10;
-
-
         }
-        balance = balance - (sum + (sum * commision));
+        return balance = balance - (sum + (sum * commision/100));
+    }
 
 
-    }
-    public int companyNameLenght(){
-        return companyName.length();
-    }
-    int monthIncreaser(int addMonth) {
-        monthsOfEmployment += addMonth;
-        return monthsOfEmployment;
+
+
+
+
+
+    public void companyNameLenght() {System.out.println(companyName.length());}
+    public void monthIncreaser(int addMonth) {
+        monthsOfEmployment = monthsOfEmployment + addMonth;
+        System.out.println(monthsOfEmployment);
+
     }
 
 
