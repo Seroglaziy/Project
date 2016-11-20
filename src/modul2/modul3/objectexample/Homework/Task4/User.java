@@ -12,7 +12,8 @@ public class User {
     private String companyName;
     private int salary;
     private String currency;
-    public void paySalary(int salary, int balance) {
+
+    public void paySalary() {
         int paySalary = balance + salary;
         System.out.println(paySalary);
     }
