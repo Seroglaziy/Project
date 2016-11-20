@@ -1,29 +1,32 @@
 package modul4.Task4_2.Task4_1;
 
-import java.util.Currency;
+
+
 
 /**
  * Created by Семья on 19.11.2016.
  */
-public abstract class Bank {
-    public static void main(String[] args) {
-
-    }
+ public abstract class Bank {
 
 
-    long id;
-    String bankCountry;
-    Currency currency;
-    int numberOfEmployees;
-    double avrSalaryOfEmployee;
-    long rating;
-    long totalCapital;
+
+    private long id;
+    private String bankCountry;
+    private Currency currency;
+    private int numberOfEmployees;
+    private double avrSalaryOfEmployee;
+    private long rating;
+    private long totalCapital;
 
 
     abstract int getLimitOfWithdrawal();
+
     abstract int getLimitOfFunding();
+
     abstract int getMonthlyRate();
+
     abstract int getCommission(int summ);
+
     double moneyPaidMonthlyForSalary() {
         return 0;
 
@@ -39,12 +42,6 @@ public abstract class Bank {
         this.rating = rating;
         this.totalCapital = totalCapital;
     }
-
-
-
-
-
-
 
     public long getId() {
         return id;
@@ -101,10 +98,7 @@ public abstract class Bank {
     public void setTotalCapital(long totalCapital) {
         this.totalCapital = totalCapital;
     }
-
-
-    }
-
+}
 
 
 
