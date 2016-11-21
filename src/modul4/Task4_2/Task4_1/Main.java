@@ -16,9 +16,9 @@ public class Main {
         User user1 = new User(7878,"Alex", 100, 4, "Company", 2500, usa);
         User user2 = new User(7879,"John", 2000, 3, "Company", 4200, usa);
         User user3 = new User(7880,"Bob", 2, 4, "Company", 2000, eur);
-        User user4 = new User(7881,"Alex", 22112, 5, "Company", 1000, eur);
-        User user5 = new User(7882,"Alex", 432, 4, "Company", 2000, chi);
-        User user6 = new User(7883,"Alex", 100, 2, "Company", 5000, chi);
+        User user4 = new User(7881,"Stiv", 22112, 5, "Company", 1000, eur);
+        User user5 = new User(7882,"Sam", 432, 4, "Company", 2000, chi);
+        User user6 = new User(7883,"Mike", 100, 2, "Company", 5000, chi);
 
         System.out.println("User1 name is "+user1.getName());
         System.out.println("John`s bank is in the "+user2.getBank().getBankCountry());
