@@ -6,6 +6,9 @@ import java.util.Date;
  * Created by Семья on 23.11.2016.
  */
 public class Room {
+    public static void main(String[] args) {
+
+    }
 
     public long id;
     public int price;
@@ -13,6 +16,26 @@ public class Room {
     public Date dateAvailableFrom;
     public String hotelName;
     public String cityName;
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Room room = (Room) o;
+        if (price != room.price) return false;
+        if (persons != room.persons) return false;
+        return cityName.equals(room.cityName);
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = price;
+        result = 31 * result + persons;
+        result = 31 * result + cityName.hashCode();
+        return result;
+    }
 
 
     public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
@@ -73,10 +96,11 @@ public class Room {
         this.cityName = cityName;
     }
 
-
-
-
     }
+
+
+
+
 
 
 
