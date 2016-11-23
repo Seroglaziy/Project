@@ -1,7 +1,7 @@
 package modul4.Task4_2.Task4_1;
 
+
 import modul4.Task4_2.Currency;
-import modul4.Task4_2.Task4_1.Bank;
 
 /**
  * Created by Семья on 21.11.2016.
