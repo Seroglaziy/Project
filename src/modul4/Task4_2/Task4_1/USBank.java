@@ -9,8 +9,6 @@ import modul4.Task4_2.Currency;
 public class USBank extends Bank {
 
 
-
-
     public USBank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
         super(id, bankCountry, currency, numberOfEmployees, avrSalaryOfEmployee, rating, totalCapital);
     }
@@ -31,8 +29,8 @@ public class USBank extends Bank {
 
     @Override
     int getMonthlyRate() {
-        if(this.getCurrency()==Currency.EUR) return 1;
-        return 1;
+        if(this.getCurrency()==Currency.EUR) return -1;
+         else return 2;
     }
     @Override
     public int getCommission(int summ) {
