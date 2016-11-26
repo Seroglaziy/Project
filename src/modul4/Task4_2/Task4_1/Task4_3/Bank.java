@@ -1,14 +1,15 @@
-package modul4.Task4_2.Task4_1;
+package modul4.Task4_2.Task4_1.Task4_3;
 
 
-
+import modul4.Task4_2.Task4_1.Task4_3.Currency;
 
 /**
  * Created by Семья on 19.11.2016.
  */
- public abstract class Bank {
+public abstract class Bank {
+    public static void main(String[] args) {
 
-
+    }
 
     private long id;
     private String bankCountry;
@@ -20,17 +21,11 @@ package modul4.Task4_2.Task4_1;
 
 
     abstract int getLimitOfWithdrawal();
-
     abstract int getLimitOfFunding();
-
     abstract int getMonthlyRate();
-
     abstract int getCommission(int summ);
-
-    double moneyPaidMonthlyForSalary() {
+    double moneyPaidMonthlyForSalary(){
         return 0;
-
-
     }
 
     public Bank(long id, String bankCountry, Currency currency, int numberOfEmployees, double avrSalaryOfEmployee, long rating, long totalCapital) {
@@ -46,59 +41,73 @@ package modul4.Task4_2.Task4_1;
     public long getId() {
         return id;
     }
-
     public void setId(long id) {
         this.id = id;
     }
-
     public String getBankCountry() {
         return bankCountry;
     }
-
     public void setBankCountry(String bankCountry) {
         this.bankCountry = bankCountry;
     }
-
     public Currency getCurrency() {
         return currency;
     }
-
     public void setCurrency(Currency currency) {
         this.currency = currency;
     }
-
     public int getNumberOfEmployees() {
         return numberOfEmployees;
     }
-
     public void setNumberOfEmployees(int numberOfEmployees) {
         this.numberOfEmployees = numberOfEmployees;
     }
-
     public double getAvrSalaryOfEmployee() {
         return avrSalaryOfEmployee;
     }
-
     public void setAvrSalaryOfEmployee(double avrSalaryOfEmployee) {
         this.avrSalaryOfEmployee = avrSalaryOfEmployee;
     }
-
     public long getRating() {
         return rating;
     }
-
     public void setRating(long rating) {
         this.rating = rating;
     }
-
     public long getTotalCapital() {
         return totalCapital;
     }
-
     public void setTotalCapital(long totalCapital) {
         this.totalCapital = totalCapital;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
