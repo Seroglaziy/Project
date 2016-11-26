@@ -8,10 +8,11 @@ import java.util.Date;
  */
 public class TripAdvisorAPI implements API {
 
-    public TripAdvisorAPI() {
+    public Room[]rooms;
 
+    public TripAdvisorAPI() {
+        rooms = new Room[5];
         Date date = new Date();
-        Room[] rooms = new Room[5];
         rooms[0] = new Room(150 , 250 , 350 , date , "Сапфир" , "Киев");
         rooms[1] = new Room(250, 350, 450 , date , "Украина" , "Киев");
         rooms[2] = new Room(350 , 450 , 550 , date , "Крещатик" , "Киев");
