@@ -24,5 +24,10 @@ public class TripAdvisorAPI implements API {
     public Room[] findRooms(int price, int persons, String city, String hotel) {
         return new Room[0];
     }
+
+    @Override
+    public Room[] getRooms() {
+        return rooms;
+    }
 }
 
