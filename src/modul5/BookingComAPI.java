@@ -1,5 +1,6 @@
 package modul5;
 
+import java.sql.Connection;
 import java.util.Date;
 
 
@@ -23,9 +24,18 @@ public class BookingComAPI implements API {
 
     }
 
+
+
+
+
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        return new Room[0];
+    return new Room[0];
+}
+
+    @Override
+    public Room[] getRooms() {
+        return rooms;
     }
 }
 
