@@ -6,9 +6,7 @@ package modul5;
  * Created by Семья on 26.11.2016.
  */
 public class Controller {
-    public static void main(String[] args) {
 
-    }
 
 
     API apis[] = {new BookingComAPI(), new TripAdvisorAPI(), new GoogleAPI()};
@@ -48,7 +46,8 @@ public class Controller {
         return res;
     }
 
-}
+    }
+
 
 
 
