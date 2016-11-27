@@ -6,9 +6,7 @@ import java.util.Date;
  * Created by Семья on 23.11.2016.
  */
 public class Room {
-    public static void main(String[] args) {
 
-    }
 
     public long id;
     public int price;
