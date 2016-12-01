@@ -2,32 +2,39 @@ package modul5;
 
 import java.util.Date;
 
-/**
- * Created by Семья on 23.11.2016.
- */
-public  class GoogleAPI implements API {
-
-
+public class GoogleAPI implements API {
     public Room[] rooms;
 
+
     public GoogleAPI() {
-        rooms = new Room[5];
         Date date = new Date();
-        rooms[0] = new Room(250 , 350 , 450 , date , "Mirrors Design Hotel" , "Киев");
-        rooms[1] = new Room(350 , 450 ,550 , date , "Салют" , "Киев");
-        rooms[2] = new Room(450 , 550 , 650 , date , "Знание", "Киев");
-        rooms[3] = new Room(550, 650 , 750 , date ,"Сити Парк Отель" , "Киев");
-        rooms[4] = new Room(650, 750 , 850 , date ,"Отель Бонтиак" , "Киев");
+        rooms = new Room[5];
+        rooms[0] = new Room(2263647, 200, 1, date, "Atlantis The Palm", "Дубай");
+        rooms[1] = new Room(365552, 250, 2, date, "Burj Al Arab", "Дубай");
+        rooms[2] = new Room(963852741, 150, 1, date, "The Cosmopolitan", "Лас-Вегас");
+        rooms[3] = new Room(22543, 150, 2, date, "Universal's Cabana Bay Beach Resort", "Орландо");
+        rooms[4] = new Room(11110121, 150, 3, date, "Resorts World", "Сентоза, Сингапур");
 
     }
+
     @Override
     public Room[] findRooms(int price, int persons, String city, String hotel) {
-        return new Room[0];
+        Room[] google = new Room[0];
+        Date data1=new Date();
+        Room sravnenueKomnat= new Room(236544,price,persons,data1,hotel,city);
+        for (int i = 0; i < rooms.length; i++) {
+            if (rooms[i].equals(sravnenueKomnat)){
+                Room[] Same2 = new Room[google.length + 1];
+                System.arraycopy(google, 0, Same2, 0, google.length);
+                google = Same2;
+                google[google.length - 1] = rooms[i];
+            }
+        }
+        return google;
     }
-
     @Override
-    public Room[] getRooms() {
-        return rooms;
+    public Room[] getAll() {
+        return this.rooms;
     }
-}
 
+}
