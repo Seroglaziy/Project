@@ -1,39 +1,18 @@
 package modul5;
 
-import java.util.Date;
 
-/**
- * Created by Семья on 23.11.2016.
- */
+
+import java.util.*;
+
 public class Room {
+    private long id;
+    private int price;
+    private int persons;
+    private Date dateAvailableFrom;
+    private String hotelName;
+    private String cityName;
 
 
-    public long id;
-    public int price;
-    public int persons;
-    public Date dateAvailableFrom;
-    public String hotelName;
-    public String cityName;
-
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Room room = (Room) o;
-        if (price != room.price) return false;
-        if (persons != room.persons) return false;
-        return cityName.equals(room.cityName);
-
-    }
-
-    @Override
-    public int hashCode() {
-        int result = price;
-        result = 31 * result + persons;
-        result = 31 * result + cityName.hashCode();
-        return result;
-    }
 
 
     public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
@@ -43,8 +22,34 @@ public class Room {
         this.dateAvailableFrom = dateAvailableFrom;
         this.hotelName = hotelName;
         this.cityName = cityName;
+
     }
 
+    @Override
+    public String toString() {
+        return "{"+hotelName + ", " +cityName+"}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Room room = (Room) o;
+
+        if (price != room.price) return false;
+        if (persons != room.persons) return false;
+        return cityName != null ? cityName.equals(room.cityName) : room.cityName == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = price;
+        result = 31 * result + persons;
+        result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
+        return result;
+    }
 
     public long getId() {
         return id;
@@ -74,6 +79,7 @@ public class Room {
         return dateAvailableFrom;
     }
 
+
     public void setDateAvailableFrom(Date dateAvailableFrom) {
         this.dateAvailableFrom = dateAvailableFrom;
     }
@@ -93,12 +99,4 @@ public class Room {
     public void setCityName(String cityName) {
         this.cityName = cityName;
     }
-
-    }
-
-
-
-
-
-
-
+}
