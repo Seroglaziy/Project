@@ -1,6 +1,6 @@
 package modul5;
 
-public class DAOimpl implements DAO{
+public class DAOImpl implements DAO{
 
     private Room[] DataBase = new Room[10];
 
