@@ -11,14 +11,14 @@ public class ArraysUtils {
         int[] array = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
 
-       //System.out.println(sum(array));
-       //System.out.println(min(array));
-       //System.out.println(max(array));
-       //System.out.println(maxPositive(array));
-       //System.out.println(multiplication(array));
-       //System.out.println(modulus(array));
-       //System.out.println(secondLargest(array));
-    }//
+       System.out.println(sum(array));
+       System.out.println(min(array));
+       System.out.println(max(array));
+       System.out.println(maxPositive(array));
+       System.out.println(multiplication(array));
+       System.out.println(modulus(array));
+       System.out.println(secondLargest(array));
+    }
 
 
     static int sum(int array[]) {
