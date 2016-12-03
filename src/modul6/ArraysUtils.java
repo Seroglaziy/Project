@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * Created by Семья on 02.12.2016.
  */
-public class ArraysUtils {
+public final class ArraysUtils {
 
 
     public static void main(String[] args) {
@@ -25,7 +25,7 @@ public class ArraysUtils {
     }
 
 
-    static int sum(int array[]) {
+    public static int sum(int[] array) {
         int sum = 0;
         for (int i = 0; i < array.length; i++)
             sum += array[i];
@@ -34,7 +34,7 @@ public class ArraysUtils {
     }
 
 
-    static int min(int array[]) {
+    public static int min(int[] array) {
         int min = array[0];
         for (int i = 1; i < array.length; i++)
             if (array[i] < min)
@@ -43,7 +43,7 @@ public class ArraysUtils {
     }
 
 
-    static int max(int array[]) {
+    public static int max(int[] array) {
         int max = array[0];
         for (int j = 1; j < array.length; j++)
             if (array[j] > max)
@@ -53,7 +53,7 @@ public class ArraysUtils {
     }
 
 
-    static int maxPositive(int array[]) {
+    public static int maxPositive(int[] array) {
         int maxPositive = array[0];
         for (int i = 1; i < array.length; i++)
             if (array[i] > maxPositive)
@@ -62,7 +62,7 @@ public class ArraysUtils {
     }
 
 
-    static int multiplication(int array[]) {
+    public static int multiplication(int[] array) {
         int multiplication = array[0];
         for (int i = 1; i < array.length; i++) {
             multiplication = multiplication * i;
@@ -71,19 +71,51 @@ public class ArraysUtils {
     }
 
 
-    static int modulus(int array[]) {
+    public static int modulus(int[] array) {
         int modulus = 10;
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i < array.length; i++) {
             System.out.println(modulus + "%" + i + "=" + modulus % i);
         }
         return modulus;
     }
 
-    static int secondLargest(int array[]) {
+    public static int secondLargest(int[] array) {
         Arrays.sort(array);
         int secondLargest = array[8];
         return secondLargest;
 
     }
+
+    public static int[] reverse(int[] array) {
+        for (int i = 0; i < array.length / 2; i++) {
+            int temp = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = temp;
+        }
+        return array;
+
+
+    }
+
+    public static int[] findEvenElements(int[] array){
+        int count = 0;
+        for (int elem : array) {
+            if (elem % 2 == 0) {
+                count++;
+            }
+        }
+        int[] evens = new int[count];
+        int index = 0;
+        for (int elem : array) {
+            if (elem % 2 == 0) {
+                evens[index] = elem;
+                index++;
+            }
+        }
+        return evens;
+    }
+
 }
+
+
 
