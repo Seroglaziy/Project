@@ -89,15 +89,15 @@ public final class ArraysUtils {
         return secondLargest;
 
     }
-
-    static public int[] reverse(int[] array) {
-        int temp[] = new int[array.length];
-        for (int i = 0; i < array.length; i++) {
-            temp[i++] = array[array.length - 1 - i];
+    public static int[] reverse(int[] array) {
+        int a = array.length;
+        int b = 0;
+        int[] rev = new int[a];
+        for (int i = a-1; i >= 0; i--) {
+            rev[b] = array[i];
+            b++;
         }
-        return array;
-
-
+        return rev;
     }
 
     public static int[] findEvenElements(int[] array) {
