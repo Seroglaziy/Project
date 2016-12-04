@@ -1,4 +1,5 @@
-package modul6;
+package modul6.Task6_1;
+
 
 import java.util.Arrays;
 
@@ -10,6 +11,7 @@ public final class ArraysUtils {
 
     public static void main(String[] args) {
 
+
         int[] array = new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
 
@@ -20,6 +22,8 @@ public final class ArraysUtils {
         System.out.println(multiplication(array));
         System.out.println(modulus(array));
         System.out.println(secondLargest(array));
+        System.out.println(Arrays.toString(reverse(array)));
+        System.out.println(Arrays.toString(findEvenElements(array)));
 
 
     }
@@ -86,36 +90,34 @@ public final class ArraysUtils {
 
     }
 
-    public static int[] reverse(int[] array) {
-        for (int i = 0; i < array.length / 2; i++) {
-            int temp = array[i];
-            array[i] = array[array.length - i - 1];
-            array[array.length - i - 1] = temp;
+    static public int[] reverse(int[] array) {
+        int temp[] = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            temp[i++] = array[array.length - 1 - i];
         }
         return array;
 
 
     }
 
-    public static int[] findEvenElements(int[] array){
-        int count = 0;
-        for (int elem : array) {
-            if (elem % 2 == 0) {
-                count++;
+    public static int[] findEvenElements(int[] array) {
+        int[] elements = new int[0];
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] % 2 == 0) {
+                int[] same = new int[elements.length + 1];
+                System.arraycopy(elements, 0, same, 0, elements.length);
+                elements = same;
+                elements[elements.length - 1] = array[i];
             }
         }
-        int[] evens = new int[count];
-        int index = 0;
-        for (int elem : array) {
-            if (elem % 2 == 0) {
-                evens[index] = elem;
-                index++;
-            }
-        }
-        return evens;
-    }
+        return elements;
 
+
+
+
+    }
 }
+
 
 
 
