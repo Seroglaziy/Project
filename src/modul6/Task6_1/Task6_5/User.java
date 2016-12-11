@@ -7,11 +7,11 @@ public class User {
 
 
 
-    public long id;
-    public String firstName;
-    public String lastName;
-    public int salary;
-    public int balance;
+    private long id;
+    private String firstName;
+    private String lastName;
+    private int salary;
+    private int balance;
 
 
     public User(long id, String firstName, String lastName, int salary, int balance) {
