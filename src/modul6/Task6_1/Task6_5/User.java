@@ -5,6 +5,8 @@ package modul6.Task6_1.Task6_5;
  */
 public class User {
 
+
+
     public long id;
     public String firstName;
     public String lastName;
