@@ -1,9 +1,46 @@
 package modul5;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class BookingComAPI implements API {
-    public Room[] rooms;
+    public static void main(String[] args) {
+
+    }
+
+    private ArrayList<Room> bookingComRooms;
+
+    public BookingComAPI() {
+        this.bookingComRooms = new ArrayList<>();
+        this.bookingComRooms.add(new Room(11, 200, 4, new Date(), "Hayat", "Kiev"));
+        this.bookingComRooms.add(new Room(22, 250, 1, new Date(), "Ukraine", "Kiev"));
+        this.bookingComRooms.add(new Room(33, 1500, 8, new Date(), "Radisson", "Lviv"));
+        this.bookingComRooms.add(new Room(44, 300, 3, new Date(), "Ace hotel", "NY City"));
+        this.bookingComRooms.add(new Room(55, 500, 5, new Date(), "The Roosevelt Hotel", "Boston"));
+
+    }
+
+    @Override
+    public ArrayList<Room> findRooms(int price, int persons, String city, String hotel) {
+        ArrayList<Room> requiredRooms = new ArrayList<>();
+        for (Room requiredRoom : this.bookingComRooms) {
+            if (requiredRoom.getPrice() == price && requiredRoom.getPersons() == persons
+                    && requiredRoom.getCityName().equals(city) && requiredRoom.getHotelName().equals(hotel)) {
+                requiredRooms.add(requiredRoom);
+            }
+        }
+        return requiredRooms;
+    }
+
+    @Override
+    public ArrayList<Room> getAll() {
+        return bookingComRooms;
+
+
+    }
+}
+
+   /* public Room[] rooms;
 
 
     public BookingComAPI() {
@@ -36,5 +73,4 @@ public class BookingComAPI implements API {
     @Override
     public Room[] getAll() {
         return this.rooms;
-    }
-}
+    }*/

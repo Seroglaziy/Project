@@ -1,40 +1,37 @@
 package modul5;
 
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class GoogleAPI implements API {
-    public Room[] rooms;
-
+    private ArrayList<Room> googleRooms;
 
     public GoogleAPI() {
-        Date date = new Date();
-        rooms = new Room[5];
-        rooms[0] = new Room(2263647, 200, 1, date, "Atlantis The Palm", "Дубай");
-        rooms[1] = new Room(365552, 250, 2, date, "Burj Al Arab", "Дубай");
-        rooms[2] = new Room(963852741, 150, 1, date, "The Cosmopolitan", "Лас-Вегас");
-        rooms[3] = new Room(22543, 150, 2, date, "Universal's Cabana Bay Beach Resort", "Орландо");
-        rooms[4] = new Room(11110121, 150, 3, date, "Resorts World", "Сентоза, Сингапур");
+
+        this.googleRooms = new ArrayList<>();
+        this.googleRooms.add(new Room(111, 600, 4, new Date(), "Hilton", "Kiev"));
+        this.googleRooms.add(new Room(222, 1250, 1, new Date(), "Ukraine", "Kiev"));
+        this.googleRooms.add(new Room(333, 500, 8, new Date(), "Radisson", "Lviv"));
+        this.googleRooms.add(new Room(444, 300, 3, new Date(), "Ace hotel", "NY City"));
+        this.googleRooms.add(new Room(555, 500, 5, new Date(), "The Roosevelt Hotel", "Boston"));
 
     }
 
     @Override
-    public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] google = new Room[0];
-        Date data1=new Date();
-        Room sravnenueKomnat= new Room(236544,price,persons,data1,hotel,city);
-        for (int i = 0; i < rooms.length; i++) {
-            if (rooms[i].equals(sravnenueKomnat)){
-                Room[] Same2 = new Room[google.length + 1];
-                System.arraycopy(google, 0, Same2, 0, google.length);
-                google = Same2;
-                google[google.length - 1] = rooms[i];
+    public ArrayList<Room> findRooms(int price, int persons, String city, String hotel) {
+        ArrayList<Room> requiredRooms = new ArrayList<>();
+        for (Room requiredRoom : this.googleRooms) {
+            if (requiredRoom.getPrice() == price && requiredRoom.getPersons() == persons
+                    && requiredRoom.getCityName().equals(city) && requiredRoom.getHotelName().equals(hotel)) {
+                requiredRooms.add(requiredRoom);
             }
         }
-        return google;
-    }
-    @Override
-    public Room[] getAll() {
-        return this.rooms;
+        return requiredRooms;
     }
 
+    @Override
+    public ArrayList<Room> getAll() {
+        return googleRooms;
+    }
 }

@@ -1,85 +1,44 @@
 package modul5;
 
+import java.util.ArrayList;
+
 public class DAOImpl implements DAO{
 
-    private Room[] DataBase = new Room[10];
-
-    public void setDataBase(Room dataBase) {
-        this.save(dataBase);
-    }
-
-    public Room[] getDataBase() {
-        return this.DataBase;
-    }
+    private ArrayList<Room> roomsDB = new ArrayList<>();
 
     @Override
-    public Room save(Room room) {
-
-        for (int i = 0; i < DataBase.length; i++) {
-
-            if (DataBase[i] == null) {
-                DataBase[i] = room;
-                break;
-
-            }
-
-        }
-        System.out.println(room.getHotelName() + " был сохранен в Базе Данных");
-        return null;
+    public boolean save(Room room) {
+        return this.roomsDB.add(room);
     }
 
     @Override
     public boolean delete(Room room) {
-        for (int i = 0; i < DataBase.length; i++) {
-            if (DataBase[i].equals(room)) {
-                DataBase[i] = null;
-                System.out.println(room.getHotelName() + " был удален из Базы Данных");
-                break;
-            }
-
-        }
-
-        return false;
+        return this.roomsDB.remove(room);
     }
 
     @Override
     public Room update(Room room) {
-
-        for (int i = 0; i < DataBase.length; i++) {
-            if (DataBase[i] == null) {
-                continue;
-            } else if (DataBase[i].getId() == room.getId()) {
-                DataBase[i] = room;
-                System.out.println(room.getHotelName() + " обновлено");
-                break;
+        for (Room roomToUpdte : this.roomsDB) {
+            if (roomToUpdte.getId() == room.getId()) {
+                roomToUpdte = room;
+                return roomToUpdte;
             }
-
         }
         return null;
     }
 
     @Override
     public Room findById(long id) {
-
-        for (int i = 0; i < DataBase.length; i++) {
-            if (DataBase[i] == null) {
-                continue;
-            } else if (DataBase[i].getId() == id) {
-                System.out.println("Результат поиска: " + DataBase[i].getHotelName());
-
-                return DataBase[i];
+        for (Room roomsToFind : this.roomsDB) {
+            if (roomsToFind.getId() == id) {
+                return roomsToFind;
             }
         }
-
-        System.out.println("Поиск не дал результатов");
-
         return null;
     }
 
-
     @Override
-    public Room[] getAll() {
-
-        return DataBase;
+    public ArrayList<Room> getAll() {
+        return this.roomsDB;
     }
 }

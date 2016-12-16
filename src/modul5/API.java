@@ -1,6 +1,7 @@
 package modul5;
 
 
+import java.util.ArrayList;
 
 /**
  * Created by Семья on 23.11.2016.
@@ -8,9 +9,9 @@ package modul5;
 public interface API {
 
 
-     Room[] findRooms(int price, int persons, String city, String hotel);
+     ArrayList<Room> findRooms(int price, int persons, String city, String hotel);
 
-     Room[] getAll();
+     ArrayList<Room> getAll();
 
 
 

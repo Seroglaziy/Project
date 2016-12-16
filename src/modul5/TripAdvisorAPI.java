@@ -1,39 +1,35 @@
 package modul5;
 
+
+import java.util.ArrayList;
 import java.util.Date;
 
 public class TripAdvisorAPI implements API {
-    public Room[]rooms;
+
+    private ArrayList<Room> tripAdvisorRooms;
 
     public TripAdvisorAPI() {
-        Date date = new Date();
-        rooms= new Room[5];
-        rooms[0] = new Room(126, 150, 2, date, "Hilton", "New York");
-        rooms[1] = new Room(963852741, 150, 1, date, "The Cosmopolitan", "Лас-Вегас");
-        rooms[2] = new Room(100241, 200, 1, date, "Drury Plaza ", "Сан-Антонио");
-        rooms[3] = new Room(22543, 150, 2, date, "Universal's Cabana Bay Beach Resort", "Орландо");
-        rooms[4] = new Room(365552, 250, 2, date, "Burj Al Arab", "Дубай");
-
+        this.tripAdvisorRooms.add(new Room(1111, 570, 3, new Date(), "Zirka", "Ternopil"));
+        this.tripAdvisorRooms.add(new Room(2222, 150, 1, new Date(), "Lviv", "Lviv"));
+        this.tripAdvisorRooms.add(new Room(3333, 200, 4, new Date(), "Hayat", "Kyiv"));
+        this.tripAdvisorRooms.add(new Room(4444, 500, 1, new Date(), "Radisson", "Paris"));
+        this.tripAdvisorRooms.add(new Room(5555, 1500, 5, new Date(), "Mariott Hotel", "Warsaw"));
     }
 
     @Override
-    public Room[] findRooms(int price, int persons, String city, String hotel) {
-        Room[] trip = new Room[0];
-        Date d=new Date();
-        Room comparesRoom= new Room(236544,price,persons,d,hotel,city);
-        for (int i = 0; i < rooms.length; i++) {
-            if (rooms[i].equals(comparesRoom)){
-                Room[] Same2 = new Room[trip.length + 1];
-                System.arraycopy(trip, 0, Same2, 0, trip.length);
-                trip = Same2;
-                trip[trip.length - 1] = rooms[i];
+    public ArrayList<Room> findRooms(int price, int persons, String city, String hotel) {
+        ArrayList<Room> requiredRooms = new ArrayList<>();
+        for (Room requiredRoom : this.tripAdvisorRooms) {
+            if (requiredRoom.getPrice() == price && requiredRoom.getPersons() == persons
+                    && requiredRoom.getCityName().equals(city) && requiredRoom.getHotelName().equals(hotel)) {
+                requiredRooms.add(requiredRoom);
             }
         }
-        return trip;
+        return requiredRooms;
     }
 
     @Override
-    public Room[] getAll() {
-        return this.rooms;
+    public ArrayList<Room> getAll() {
+        return tripAdvisorRooms;
     }
 }
