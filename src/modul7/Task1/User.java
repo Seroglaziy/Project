@@ -61,9 +61,6 @@ public class User {
    }
 
 
-
-
-
    @Override
    public boolean equals(Object o) {
       if (this == o) return true;
@@ -89,20 +86,21 @@ public class User {
       return result;
    }
 
+
    @Override
    public String toString() {
-      return "User{" +
-              "id=" + id +
-              ", firstName='" + firstName + '\'' +
-              ", lastName='" + lastName + '\'' +
-              ", city='" + city + '\'' +
-              ", balance=" + balance +
-              '}';
-   }
+      final StringBuffer sb = new StringBuffer("User{");
+      sb.append("id=").append(id);
+      sb.append(", firstName='").append(firstName).append('\'');
+      sb.append(", lastName='").append(lastName).append('\'');
+      sb.append(", city='").append(city).append('\'');
+      sb.append(", balance=").append(balance);
+      sb.append('}');
+      return sb.toString();
 
 
    }
-
+}
 
 
 
