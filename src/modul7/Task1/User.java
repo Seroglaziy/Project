@@ -1,4 +1,4 @@
-package modul7;
+package modul7.Task1;
 
 /**
  * Created by Семья on 09.12.2016.
@@ -62,6 +62,8 @@ public class User {
 
 
 
+
+
    @Override
    public boolean equals(Object o) {
       if (this == o) return true;
@@ -86,6 +88,7 @@ public class User {
       result = 31 * result + balance;
       return result;
    }
+
    @Override
    public String toString() {
       return "User{" +
@@ -95,8 +98,11 @@ public class User {
               ", city='" + city + '\'' +
               ", balance=" + balance +
               '}';
-}
-}
+   }
+
+
+   }
+
 
 
 
