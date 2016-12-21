@@ -1,25 +1,42 @@
-package modul7.Task1;
-
+package Test7;
 
 import java.util.Currency;
 
 /**
- * Created by Семья on 09.12.2016.
+ * Created by Семья on 19.12.2016.
  */
 public class Order implements Comparable<Order> {
-
+    private long id;
     private int price;
     private Currency currency;
     private String itemName;
     private String shopIdentificator;
     private User user;
 
-    public Order(int price, Currency currency, String itemName, String shopIdentificator, User user) {
+
+    public Order(long id, int price, Currency currency, String itemName, String shopIdentificator, User user) {
+        this.id = id;
         this.price = price;
         this.currency = currency;
         this.itemName = itemName;
         this.shopIdentificator = shopIdentificator;
         this.user = user;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public int getPrice() {
@@ -54,14 +71,6 @@ public class Order implements Comparable<Order> {
         this.shopIdentificator = shopIdentificator;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -69,40 +78,43 @@ public class Order implements Comparable<Order> {
 
         Order order = (Order) o;
 
+        if (id != order.id) return false;
         if (price != order.price) return false;
         if (currency != null ? !currency.equals(order.currency) : order.currency != null) return false;
         if (itemName != null ? !itemName.equals(order.itemName) : order.itemName != null) return false;
-        if (shopIdentificator != null ? !shopIdentificator.equals(order.shopIdentificator) : order.shopIdentificator != null)
-            return false;
-        return user != null ? user.equals(order.user) : order.user == null;
+        return shopIdentificator != null ? shopIdentificator.equals(order.shopIdentificator) : order.shopIdentificator == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = price;
+        int result = (int) (id ^ (id >>> 32));
+        result = 31 * result + price;
         result = 31 * result + (currency != null ? currency.hashCode() : 0);
         result = 31 * result + (itemName != null ? itemName.hashCode() : 0);
         result = 31 * result + (shopIdentificator != null ? shopIdentificator.hashCode() : 0);
-        result = 31 * result + (user != null ? user.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("Order{");
-        sb.append("price=").append(price);
-        sb.append(", currency=").append(currency);
-        sb.append(", itemName='").append(itemName).append('\'');
-        sb.append(", shopIdentificator='").append(shopIdentificator).append('\'');
-        sb.append(", user=").append(user);
-        sb.append('}');
-        return sb.toString();
+        return "Order{" +
+                "id=" + id +
+                ", price=" + price +
+                ", currency=" + currency +
+                ", itemName='" + itemName + '\'' +
+                ", shopIdentificator='" + shopIdentificator + '\'' +
+                ", user=" + user +
+                '}';
     }
 
     @Override
     public int compareTo(Order o) {
-        return o.getPrice() - this.price;
+        return price - o.getPrice();
     }
 
-}
+
+    }
+
+
+
