@@ -6,10 +6,11 @@ import modul7.Task1.User;
 import java.util.*;
 
 /**
- * Created by Семья on 16.12.2016.
+ * Created by Семья on 23.12.2016.
  */
 public class Main {
     public static void main(String[] args) {
+
         TreeSet<Order> orderTreeSet = new TreeSet<>();
         Random ran = new Random();
         Currency currency1 = Currency.getInstance(Locale.US);
@@ -27,17 +28,16 @@ public class Main {
         orderTreeSet.add(new Order(100, currency1, "ITEM", "SHOP", new User(20, "USER", "Petrov", "LVIV", 500)));
 
         System.out.println(orderTreeSet);
-        System.out.println("=====================");
+        System.out.println("=================================");
 
         System.out.println(treeSetCheckForUserLastName(orderTreeSet));
-        System.out.println("=====================");
+        System.out.println("=================================");
 
         System.out.println(orderTreeSet.first()); //orderTreeSet sorted by price descending by default. first element - order with highest price
 
-        System.out.println("=====================");
+        System.out.println("=================================");
 
         System.out.println(deleteUSDOrders(orderTreeSet));
-
 
     }
 
@@ -61,8 +61,6 @@ public class Main {
             }
         }
         return resultSet;
+
     }
-
-
 }
-
