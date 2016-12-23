@@ -1,13 +1,14 @@
-package modul7.compare;
+package modul7.Compare;
 
-import modul7.Task1.Order;
+import modul7.Order;
 
 import java.util.Comparator;
 
 /**
- * Created by Семья on 16.12.2016.
+ * Created by Семья on 23.12.2016.
  */
 public class NameShopIDUserCityComparator implements Comparator<Order> {
+
     @Override
     public int compare(Order o1, Order o2) {
         String itemName1 = o1.getItemName();
