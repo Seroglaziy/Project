@@ -1,24 +1,23 @@
-package Test7;
+package modul9.Task9_1;
 
 /**
- * Created by Семья on 19.12.2016.
+ * Created by Семья on 07.01.2017.
  */
 public class User {
-    private long id;
-    private String firstName;
-    private String lastName;
-    private String city;
-    private int balance;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", city='" + city + '\'' +
-                ", balance=" + balance +
-                '}';
+
+   private long id;
+   private String firstName;
+   private String lastName;
+   private String city;
+   private int balance;
+
+    public User(long id, String firstName, String lastName, String city, int balance) {
+        this.id = id;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.city = city;
+        this.balance = balance;
     }
 
     @Override
@@ -44,16 +43,6 @@ public class User {
         result = 31 * result + (city != null ? city.hashCode() : 0);
         result = 31 * result + balance;
         return result;
-    }
-
-
-
-    public User(long id, String firstName, String lastName, String city, int balance) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.city = city;
-        this.balance = balance;
     }
 
     public long getId() {
@@ -95,8 +84,4 @@ public class User {
     public void setBalance(int balance) {
         this.balance = balance;
     }
-
-
-
-    }
-
+}
