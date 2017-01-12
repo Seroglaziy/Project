@@ -4,15 +4,18 @@ package modul7.Task2;
 import modul7.Compare.NameShopIDUserCityComparator;
 import modul7.Compare.PriceComparator;
 import modul7.Compare.PriceUserCityComparator;
-import modul7.Order;
-import modul7.User;
+import modul7.Task1.Order;
+import modul7.Task1.User;
 
 import java.util.*;
+
 
 /**
  * Created by Семья on 23.12.2016.
  */
 public class Main {
+
+
     public static void main(String[] args) {
 
 
@@ -26,7 +29,7 @@ public class Main {
             orderList.add(i, new Order(ran.nextInt(3), curUsd, "Item" + ran.nextInt(2), "Shop" + ran.nextInt(2),
                     new User(i, "U" + i, "L" + i, "Kiev" + ran.nextInt(3), ran.nextInt(100))));
         }
-        orderList.add(6, new Order(200, curEur, "I", "S", new User(20, "USER", "USER", "ODESSA", 500)));
+        orderList.add(6 , new Order(200 , curEur , "I", "S" , new User(20 , "USER", "USER", "ODESSA", 500)));
         orderList.add(7, new Order(200, curEur, "I", "S", new User(20, "USER", "USER", "ODESSA", 500)));
 
         orderList.add(8, new Order(2000, curUah, "ITEM", "SHOP", new User(20, "USER", "USER", "LVIV", 500)));
@@ -42,6 +45,7 @@ public class Main {
 
         Collections.sort(orderList, new PriceComparator());
 
+
         System.out.print("Price descending sorted ");
         printArrayList(orderList);
 
@@ -52,6 +56,8 @@ public class Main {
 
         Collections.sort(orderList, new NameShopIDUserCityComparator());
 
+        Collections.sort(orderList);
+
         System.out.print("ItemName AND ShopID AND UserCity sorted ");
         printArrayList(orderList);
 
@@ -60,6 +66,11 @@ public class Main {
 
         System.out.print("With price not lower than 1500 ");
         printArrayList(filterByLowestPrice(orderList));
+
+
+
+
+
 
         System.out.println("MAP1");
         System.out.println(splitByCurrency(orderList));
@@ -70,32 +81,38 @@ public class Main {
     }
 
 
+
+
+
     public static ArrayList<Order> deleteDuplicates(List<Order> inputList) {
         Set<Order> tempSet = new HashSet<>();
         tempSet.addAll(inputList);
         return new ArrayList<>(tempSet);
     }
 
-    public static void printArrayList(List<Order> list) {
-        System.out.println("ArrayList");
-        for (Order order : list) {
-            System.out.println(order.toString());
-        }
-        System.out.println("");
-    }
+   public static void printArrayList(List<Order> list) {
+       System.out.println("ArrayList");
+       for (Order order : list) {
+           System.out.println(order.toString());
+       }
+       System.out.println("");
+   }
 
-    public static ArrayList<Order> filterByLowestPrice(List<Order> inputList) {
-        ArrayList<Order> resultList = new ArrayList<>();
-        int index = 0;
-        int lowestPrice = 1500;
-        for (Order order : inputList) {
-            if (order.getPrice() >= lowestPrice) {
-                resultList.add(index, order);
-                index++;
-            }
-        }
-        return resultList;
-    }
+
+   public static ArrayList<Order> filterByLowestPrice(List<Order> inputList) {
+       ArrayList<Order> resultList = new ArrayList<>();
+       int index = 0;
+       int lowestPrice = 1500;
+       for (Order order : inputList) {
+           if (order.getPrice() >= lowestPrice) {
+               resultList.add(index, order);
+               index++;
+           }
+       }
+       return resultList;
+   }
+
+
 
     public static Map<String, List<Order>> splitByCurrency(List<Order> inputList) {
         Map<String, List<Order>> resultMap = new TreeMap<>();
