@@ -3,11 +3,8 @@ package modul10.Task_1;
 /**
  * Created by Семья on 14.01.2017.
  */
-public class Main {
+public class Task_1 {
     public static void main(String[] args){
-
-
-
 
 
         try {
