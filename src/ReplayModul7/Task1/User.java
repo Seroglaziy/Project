@@ -1,9 +1,10 @@
-package modul7.Task1;
+package ReplayModul7.Task1;
 
 /**
- * Created by Семья on 23.12.2016.
+ * Created by Семья on 18.01.2017.
  */
 public class User {
+
 
     private long id;
     private String firstName;
@@ -96,12 +97,4 @@ public class User {
         sb.append('}');
         return sb.toString();
     }
-
-
 }
-
-
-
-
-
-
