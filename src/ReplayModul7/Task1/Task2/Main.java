@@ -78,13 +78,13 @@ public class Main {
 // ==============================================================================
 
 
-    public static ArrayList<Order> deleteDuplicates(List<Order> inputList) {
+    private static ArrayList<Order> deleteDuplicates(List<Order> inputList) {
         Set<Order> tempSet = new HashSet<>();
         tempSet.addAll(inputList);
         return new ArrayList<>(tempSet);
     }
 
-    public static void printArrayList(List<Order> list) {
+    private static void printArrayList(List<Order> list) {
         System.out.println("ArrayList");
         for (Order order : list) {
             System.out.println(order.toString());
@@ -93,7 +93,7 @@ public class Main {
     }
 
 
-    public static ArrayList<Order> filterByLowestPrice(List<Order> inputList) {
+    private static ArrayList<Order> filterByLowestPrice(List<Order> inputList) {
         ArrayList<Order> resultList = new ArrayList<>();
         int index = 0;
         int lowestPrice = 1500;
@@ -107,7 +107,7 @@ public class Main {
     }
 
 
-    public static Map<String, List<Order>> splitByCurrency(List<Order> inputList) {
+    private static Map<String, List<Order>> splitByCurrency(List<Order> inputList) {
         Map<String, List<Order>> resultMap = new TreeMap<>();
         List<Order> listUSD = new ArrayList<>();
         List<Order> listUAH = new ArrayList<>();
@@ -124,7 +124,7 @@ public class Main {
         return resultMap;
     }
 
-    public static Map<String, List<Order>> splitByUserCity(List<Order> inputList) {
+    private static Map<String, List<Order>> splitByUserCity(List<Order> inputList) {
         Map<String, List<Order>> resultMap = new TreeMap<>();
         Set<String> citySet = new HashSet<>();
         for (Order order : inputList) {
