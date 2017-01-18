@@ -1,4 +1,4 @@
-package modul5;
+package modul5.entities;
 
 
 
