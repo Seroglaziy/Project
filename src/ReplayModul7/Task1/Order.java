@@ -1,10 +1,11 @@
-package modul7.Task1;
+package ReplayModul7.Task1;
 
 import java.util.Currency;
 
 /**
- * Created by Семья on 23.12.2016.
+ * Created by Семья on 18.01.2017.
  */
+
     public class Order implements Comparable<Order> {
 
 
@@ -105,4 +106,4 @@ import java.util.Currency;
             return o.getPrice() - this.price;
         }
 
-}
+    }
