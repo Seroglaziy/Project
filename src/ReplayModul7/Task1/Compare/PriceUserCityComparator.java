@@ -1,11 +1,11 @@
-package modul7.Compare;
+package ReplayModul7.Task1.Compare;
 
-import modul7.Order;
+import ReplayModul7.Task1.Order;
 
 import java.util.Comparator;
 
 /**
- * Created by Семья on 23.12.2016.
+ * Created by Семья on 18.01.2017.
  */
 public class PriceUserCityComparator implements Comparator<Order> {
 
