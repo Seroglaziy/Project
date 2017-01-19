@@ -7,6 +7,7 @@ import java.util.GregorianCalendar;
  * Created by Семья on 19.01.2017.
  */
 public class GoogleAPI implements API {
+
     ArrayList<Room> rooms = new ArrayList<>();
 
     public GoogleAPI() {
