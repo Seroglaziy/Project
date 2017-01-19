@@ -1,19 +1,18 @@
-package modul5.entities;
+package modul7.hwModul5;
 
+import java.util.Date;
 
-
-import java.util.*;
-
+/**
+ * Created by Семья on 19.01.2017.
+ */
 public class Room {
+
     private long id;
     private int price;
     private int persons;
     private Date dateAvailableFrom;
     private String hotelName;
     private String cityName;
-
-
-
 
     public Room(long id, int price, int persons, Date dateAvailableFrom, String hotelName, String cityName) {
         this.id = id;
@@ -22,13 +21,11 @@ public class Room {
         this.dateAvailableFrom = dateAvailableFrom;
         this.hotelName = hotelName;
         this.cityName = cityName;
-
     }
 
-    @Override
-    public String toString() {
-        return "{"+hotelName + ", " +cityName+"}";
-    }
+    //по заданию нет сравнения по названию отеля, но я добавил чтоб использовать для задания 5.6,
+    //иначе этот метод нигде не используется
+
 
     @Override
     public boolean equals(Object o) {
@@ -39,16 +36,29 @@ public class Room {
 
         if (price != room.price) return false;
         if (persons != room.persons) return false;
+        if (hotelName != room.hotelName) return false;
         return cityName != null ? cityName.equals(room.cityName) : room.cityName == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = price;
+        int result = price + (int) id;
         result = 31 * result + persons;
         result = 31 * result + (cityName != null ? cityName.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Room{" +
+                "id=" + id +
+                ", price=" + price +
+                ", persons=" + persons +
+                ", dateAvailableFrom=" + dateAvailableFrom +
+                ", hotelName='" + hotelName + '\'' +
+                ", cityName='" + cityName + '\'' +
+                '}';
     }
 
     public long getId() {
@@ -78,7 +88,6 @@ public class Room {
     public Date getDateAvailableFrom() {
         return dateAvailableFrom;
     }
-
 
     public void setDateAvailableFrom(Date dateAvailableFrom) {
         this.dateAvailableFrom = dateAvailableFrom;
