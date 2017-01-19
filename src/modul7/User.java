@@ -1,10 +1,9 @@
-package ReplayModul7.Task1;
+package modul7;
 
 /**
- * Created by Семья on 18.01.2017.
+ * Created by Семья on 19.01.2017.
  */
 public class User {
-
 
     private long id;
     private String firstName;
@@ -12,13 +11,17 @@ public class User {
     private String city;
     private int balance;
 
-
     public User(long id, String firstName, String lastName, String city, int balance) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.city = city;
         this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "{" +  "id: " + id + ", " + firstName + " " + lastName + ", " + city ;
     }
 
     @Override
@@ -30,18 +33,18 @@ public class User {
 
         if (id != user.id) return false;
         if (balance != user.balance) return false;
-        if (firstName != null ? !firstName.equals(user.firstName) : user.firstName != null) return false;
-        if (lastName != null ? !lastName.equals(user.lastName) : user.lastName != null) return false;
-        return city != null ? city.equals(user.city) : user.city == null;
+        if (!firstName.equals(user.firstName)) return false;
+        if (!lastName.equals(user.lastName)) return false;
+        return city.equals(user.city);
 
     }
 
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + (firstName != null ? firstName.hashCode() : 0);
-        result = 31 * result + (lastName != null ? lastName.hashCode() : 0);
-        result = 31 * result + (city != null ? city.hashCode() : 0);
+        result = 31 * result + firstName.hashCode();
+        result = 31 * result + lastName.hashCode();
+        result = 31 * result + city.hashCode();
         result = 31 * result + balance;
         return result;
     }
@@ -84,17 +87,5 @@ public class User {
 
     public void setBalance(int balance) {
         this.balance = balance;
-    }
-
-    @Override
-    public String toString() {
-        final StringBuffer sb = new StringBuffer("User{");
-        sb.append("id=").append(id);
-        sb.append(", firstName='").append(firstName).append('\'');
-        sb.append(", lastName='").append(lastName).append('\'');
-        sb.append(", city='").append(city).append('\'');
-        sb.append(", balance=").append(balance);
-        sb.append('}');
-        return sb.toString();
     }
 }
