@@ -1,13 +1,11 @@
-package modul7.Task1.Compare;
-
-
+package modul7.compare;
 
 import modul7.Task1.entities.Order;
 
 import java.util.Comparator;
 
 /**
- * Created by Семья on 18.01.2017.
+ * Created by Семья on 29.01.2017.
  */
 public class PriceUserCityComparator implements Comparator<Order> {
     @Override
