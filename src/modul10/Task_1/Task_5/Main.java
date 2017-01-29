@@ -6,7 +6,7 @@ import java.util.Random;
  * Created by Семья on 29.01.2017.
  */
 public class Main {
-    static void throwsExceptions() throws FirsException, SecondException, ThirdException {
+    private static void throwsExceptions() throws FirsException, SecondException, ThirdException {
         switch (new Random().nextInt(3)) {
             case 0:
                 throw new FirsException();
