@@ -1,4 +1,4 @@
-package modul7.Task1.Task4;
+package modul7.Task5;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -6,10 +6,9 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by Семья on 18.01.2017.
+ * Created by Семья on 29.01.2017.
  */
 public class Main {
-
     public static void main(String[] args) {
         List<Integer> intArrayList = new ArrayList<>();
         List<Integer> intLinkedList = new LinkedList<>();
