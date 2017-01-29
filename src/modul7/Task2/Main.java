@@ -1,19 +1,17 @@
-package modul7.Task1.Task2;
+package modul7.Task2;
 
-import modul7.Task1.Compare.NameShopIDUserCityComparator;
-import modul7.Task1.Compare.PriceComparator;
-import modul7.Task1.Compare.PriceUserCityComparator;
 import modul7.Task1.entities.Order;
 import modul7.Task1.entities.User;
-
+import modul7.compare.NameShopIDUserCityComparator;
+import modul7.compare.PriceComparator;
+import modul7.compare.PriceUserCityComparator;
 
 import java.util.*;
 
 /**
- * Created by Семья on 18.01.2017.
+ * Created by Семья on 29.01.2017.
  */
 public class Main {
-
     public static void main(String[] args) {
 
         Random ran = new Random();
