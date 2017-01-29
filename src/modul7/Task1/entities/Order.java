@@ -2,7 +2,9 @@ package modul7.Task1.entities;
 
 import java.util.Currency;
 
-
+/**
+ * Created by Семья on 29.01.2017.
+ */
 public class Order implements Comparable<Order> {
     private int price;
     private Currency currency;
@@ -86,7 +88,7 @@ public class Order implements Comparable<Order> {
 
     @Override
     public String toString() {
-        final StringBuffer sb = new StringBuffer("modul7.Task1.entities.Order{");
+        final StringBuffer sb = new StringBuffer("Order{");
         sb.append("price=").append(price);
         sb.append(", currency=").append(currency);
         sb.append(", itemName='").append(itemName).append('\'');
