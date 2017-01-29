@@ -1,4 +1,4 @@
-package modul7.Task1.Task3;
+package modul7.Task3;
 
 import modul7.Task1.entities.Order;
 import modul7.Task1.entities.User;
@@ -6,10 +6,9 @@ import modul7.Task1.entities.User;
 import java.util.*;
 
 /**
- * Created by Семья on 18.01.2017.
+ * Created by Семья on 29.01.2017.
  */
 public class Main {
-
     public static void main(String[] args) {
         TreeSet<Order> orderTreeSet = new TreeSet<>();
         Random ran = new Random();
@@ -63,5 +62,3 @@ public class Main {
         return resultSet;
     }
 }
-
-
